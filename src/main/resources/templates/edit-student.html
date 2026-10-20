@@ -16,11 +16,11 @@
 <main class="container narrow"> 
   <section class="card"> 
     <h2>Edit Student #<span th:text="${student.id}"></span></h2> 
-    <form th:action="@{/students/{id}/update(id=${student.id})}" th:object="${student}" 
+    <form th:action="@{/student/{id}/update(id=${student.id})}" th:object="${student}" 
 method="post" novalidate> 
-      <div th:replace="~{fragments :: fields}"></div> 
+      <div th:replace="~{fragment :: fields}"></div> 
       <button type="submit" class="btn primary">Update Student</button> 
-      <a th:href="@{/students}" class="btn">Cancel</a> 
+      <a th:href="@{/student}" class="btn">Cancel</a> 
     </form> 
   </section> 
 </main> 

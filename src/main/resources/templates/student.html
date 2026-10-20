@@ -21,8 +21,8 @@
   <!-- ===== CREATE: form ===== --> 
   <section class="card"> 
     <h2>Register a Student</h2> 
-    <form th:action="@{/students}" th:object="${student}" method="post" novalidate> 
- <div th:replace="~{fragments :: fields}">
+    <form th:action="@{/student}" th:object="${student}" method="post" novalidate> 
+ <div th:replace="~{fragment :: fields}">
 
  </div> 
       <button type="submit" class="btn primary">Save Student</button> 
@@ -54,9 +54,9 @@ th:text="${#lists.size(students)}">0</span></h2>
             <td th:text="${s.age}"></td> 
             <td class="actions"> 
               <!-- UPDATE --> 
-              <a class="btn small" th:href="@{/students/{id}/edit(id=${s.id})}">Edit</a> 
+              <a class="btn small" th:href="@{/student/{id}/edit(id=${s.id})}">Edit</a> 
               <!-- DELETE --> 
-              <form th:action="@{/students/{id}/delete(id=${s.id})}" method="post" 
+              <form th:action="@{/student/{id}/delete(id=${s.id})}" method="post" 
                     onsubmit="return confirm('Delete this student?');"> 
                 <button type="submit" class="btn small danger">Delete</button> 
               </form> 
@@ -72,4 +72,3 @@ th:text="${#lists.size(students)}">0</span></h2>
 <footer class="footer">COSC 32133 / BECS 32263 &middot; Lab Sheet 04</footer> 
 </body> 
 </html> 
-
